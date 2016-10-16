@@ -32,5 +32,7 @@ namespace TheGame.Models
         //[DataType(DataType.Date),
         // DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         //public DateTime DateOfBirth { get; set; }
+
+        
     }
 }

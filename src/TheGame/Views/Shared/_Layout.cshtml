@@ -1,69 +1,57 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="pl">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - TheGame</title>
-
-    <environment names="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
-    </environment>
-    <environment names="Staging,Production">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-    </environment>
-    @Html.ApplicationInsightsJavaScript(TelemetryConfiguration)
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Intellectual Game">
+    <meta name="author" content="">
+    <title>The Game</title>
+   
+    <!--Font-->
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,900&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <!--CSS-->
+    <link href="~/css/style.css" rel="stylesheet" />
+    
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">TheGame</a>
+    <div id="container">
+        <div id="menu">
+            <a asp-action="Index"><div class="option">Home</div></a>
+            <a asp-action="About"><div class="option">Rankingi</div></a>
+            <a asp-action="Index"><div class="option">Jak grać?</div></a>
+            <div class="optionR">Wyloguj</div>
+            <div class="optionR">Moje konto</div>
+            <div style="clear:both;"></div>
+        </div>
+        <div id="topbar">
+            <div id="topbarL">
+                <img src="~/images/craig.jpg" /> <!--einstain-->
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                </ul>
-                @await Html.PartialAsync("_LoginPartial")
+            <div id="topbarR">
+                <div style="height: 15px;"></div>
+                "Szaleństwem jest robić wciąż to samo i oczekiwać różnych rezultatów” <br /> ~ Albert Einstein.
             </div>
+            <div style="clear:both;"></div>
+        </div>
+        <div id="sidebar">
+            <div class="optionL">Strona główna</div>
+            <div class="optionL">Pojedynki </div>
+            <div class="optionL">Historia</div>
+        </div>
+        <div id="content">
+            <center>
+                    @RenderSection("Scripts", required: false)
+                    @RenderBody()
+            </center>        
+        </div>
+        <div id="footer">
+            THEGame &copy; Wszelkie prawa zastrzeżone 2016
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2016 - TheGame</p>
-        </footer>
-    </div>
 
-    <environment names="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </environment>
-    <environment names="Staging,Production">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery">
-        </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
-        </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
-    </environment>
-
-    @RenderSection("scripts", required: false)
+    @section scripts{
+      
+    }
 </body>
 </html>

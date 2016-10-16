@@ -9,7 +9,7 @@
     <title>The Game</title>
    
     <!--Font-->
-    <link href='http://fonts.googleapis.com/css?family=Lato:400,900&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <!--CSS-->
     <link href="~/css/style.css" rel="stylesheet" />
     
@@ -17,28 +17,49 @@
 <body>
     <div id="container">
         <div id="menu">
-            <a asp-action="Index"><div class="option">Home</div></a>
-            <a asp-action="About"><div class="option">Rankingi</div></a>
-            <a asp-action="Index"><div class="option">Jak grać?</div></a>
-            <div class="optionR">Wyloguj</div>
-            <div class="optionR">Moje konto</div>
-            <div style="clear:both;"></div>
+            <ul>
+                <li class="option">
+                    <a asp-action="Index">Home</a>
+                </li>
+                <li class="option">
+                    <a asp-action="About">Rankingi</a>
+                </li>
+                <li class="option">
+                    <a asp-action="Regulamin">Jak grać?</a>
+                </li>
+                <li class="optionR">
+                 Wyloguj
+                </li>
+                <li class="optionR">
+                Konto
+                </li>
+                <li>
+                <div style="clear:both;"></div>
+
+                </li>
+            </ul>
         </div>
         <div id="topbar">
             <div id="topbarL">
-                <img src="~/images/craig.jpg" /> <!--einstain-->
+                <img src="~/images/einstein.png" /> 
             </div>
             <div id="topbarR">
                 <div style="height: 15px;"></div>
-                "Szaleństwem jest robić wciąż to samo i oczekiwać różnych rezultatów” <br /> ~ Albert Einstein.
+                <em>"Szaleństwem jest robić wciąż to samo i oczekiwać różnych rezultatów” </em><br /><br /> ~ Albert Einstein.
             </div>
             <div style="clear:both;"></div>
         </div>
-        <div id="sidebar">
-            <div class="optionL">Strona główna</div>
+      
+            <ul id="sidebar">
+                <li class="optionL">Strona główna</li>
+                <li class="optionL">Pojedynki</li>
+                <li class="optionL">Historia</li>
+            </ul>
+            @*<div class="optionL">Strona główna</div>
             <div class="optionL">Pojedynki </div>
-            <div class="optionL">Historia</div>
-        </div>
+            <div class="optionL">Historia</div>*@
+        
+
         <div id="content">
             <center>
                     @RenderSection("Scripts", required: false)
@@ -51,6 +72,7 @@
     </div>
 
     @section scripts{
+
       
     }
 </body>
